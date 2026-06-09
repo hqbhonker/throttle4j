@@ -1,0 +1,9 @@
+server:
+  port: 8080
+
+throttle4j:
+  enabled: true
+  default-algorithm: TOKEN_BUCKET
+  default-limit: 100
+  default-window: 1m
+  store-type: memory

@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.throttle4j.spring.autoconfigure.Throttle4jAutoConfiguration,\
+com.throttle4j.spring.web.Throttle4jWebAutoConfiguration
