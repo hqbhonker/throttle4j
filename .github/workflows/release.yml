@@ -1,0 +1,58 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up JDK 11
+      uses: actions/setup-java@v4
+      with:
+        java-version: '11'
+        distribution: 'temurin'
+        cache: maven
+
+    - name: Build and Test
+      run: mvn clean verify -B
+
+    - name: Publish to GitHub Packages
+      run: mvn deploy -B -DskipTests
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Extract version from tag
+      id: version
+      run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
+
+    - name: Create GitHub Release
+      uses: softprops/action-gh-release@v1
+      with:
+        generate_release_notes: true
+        body: |
+          ## throttle4j v${{ steps.version.outputs.VERSION }}
+
+          A lightweight, high-performance distributed rate limiting library for Java.
+
+          ### Installation
+
+          ```xml
+          <dependency>
+              <groupId>com.throttle4j</groupId>
+              <artifactId>throttle4j-spring-boot-starter</artifactId>
+              <version>${{ steps.version.outputs.VERSION }}</version>
+          </dependency>
+          ```
+
+          See [CHANGELOG.md](https://github.com/hqbhonker/throttle4j/blob/main/CHANGELOG.md) for details.
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.0] - 2024-06-09
+
 ### Added
 - Core rate limiting interface and configuration (`RateLimiter`, `RateLimiterConfig`)
 - Fixed Window rate limiting algorithm
@@ -21,8 +23,3 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Graceful fallback to local store when Redis is unavailable
 - GitHub Actions CI pipeline (JDK 11 & 17 matrix)
 - Comprehensive unit tests (>60% coverage)
-
-## [0.1.0] - 2024-XX-XX
-
-### Added
-- Initial release
