@@ -1,7 +1,7 @@
 # throttle4j
 
-[![CI](https://github.com/USERNAME/throttle4j/actions/workflows/ci.yml/badge.svg)](https://github.com/USERNAME/throttle4j/actions)
-[![Coverage](https://img.shields.io/badge/coverage-60%25+-brightgreen)](https://github.com/USERNAME/throttle4j)
+[![CI](https://github.com/hqbhonker/throttle4j/actions/workflows/ci.yml/badge.svg)](https://github.com/hqbhonker/throttle4j/actions)
+[![Coverage](https://img.shields.io/badge/coverage-60%25+-brightgreen)](https://github.com/hqbhonker/throttle4j)
 [![Maven Central](https://img.shields.io/maven-central/v/com.throttle4j/throttle4j)](https://search.maven.org/artifact/com.throttle4j/throttle4j)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
@@ -147,7 +147,7 @@ throttle4j:
 ## 从源码构建
 
 ```bash
-git clone https://github.com/USERNAME/throttle4j.git
+git clone https://github.com/hqbhonker/throttle4j.git
 cd throttle4j
 mvn clean install
 ```
