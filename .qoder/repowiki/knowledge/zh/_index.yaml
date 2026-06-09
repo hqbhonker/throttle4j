@@ -1,0 +1,64 @@
+# 知识卡导出索引文件
+schema_version: 1
+locale: zh-CN
+branch: main
+exported_at: "2026-06-09T06:13:34Z"
+modules:
+    "":
+        dir_name: Throttle4j 限流工具包父工程
+        title: Throttle4j 限流工具包父工程
+        scope:
+            - .gitignore
+            - CONTRIBUTING.md
+            - README.md
+            - README_CN.md
+            - ROADMAP.md
+            - pom.xml
+            - docs/
+            - .github/
+            - CHANGELOG.md
+            - LICENSE
+        source_files: []
+        children: []
+        depends_on: []
+        related_to: []
+    core:
+        dir_name: 限流核心算法与存储抽象
+        title: 限流核心算法与存储抽象
+        scope:
+            - throttle4j-core/
+        source_files: []
+        children: []
+        depends_on: []
+        related_to:
+            - path: redis
+    examples:
+        dir_name: 限流功能示例与演示
+        title: 限流功能示例与演示
+        scope:
+            - throttle4j-examples/
+        source_files: []
+        children: []
+        depends_on: []
+        related_to:
+            - path: spring_boot_starter
+    redis:
+        dir_name: Redis 分布式限流存储
+        title: Redis 分布式限流存储
+        scope:
+            - throttle4j-redis/
+        source_files: []
+        children: []
+        depends_on: []
+        related_to:
+            - path: core
+    spring_boot_starter:
+        dir_name: Throttle4j Spring Boot Starter
+        title: Throttle4j Spring Boot Starter
+        scope:
+            - throttle4j-spring-boot-starter/
+        source_files: []
+        children: []
+        depends_on: []
+        related_to:
+            - path: examples
